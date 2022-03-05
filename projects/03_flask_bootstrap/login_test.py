@@ -10,7 +10,6 @@ def login():
     print(email_address, passwd)
 
     if email_address == 'dave@gmail.com' and passwd == '111':
-
         return_data = {'auth': 'success'}
     else:
         return_data = {'auth': 'failed'}
