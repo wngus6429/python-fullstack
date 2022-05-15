@@ -4,6 +4,7 @@ import requests
 app = Flask(__name__)
 
 #app.debug가 true면 로깅하지 말라
+#true면 개발자가 테스트중이니까.
 if not app.debug:
     import logging
     from logging.handlers import RotatingFileHandler  # logging 핸들러 이름을 적어줌
@@ -21,3 +22,4 @@ def page_not_found(error):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="8080", debug=False)
+    # 뒤에 debug가 true면 나오는 양이 많아져서 디버깅 하기 좋겟지

@@ -17,7 +17,7 @@ def before_request():
 @app.after_request
 def after_request(response):
     print("HTTP 요청 처리가 끝나고 브라우저에 응답하기 전에 실행")
-    return response
+    return response # response를 리턴 해줘야 하는 규칙이 있다.
 
 
 @app.route("/hello")

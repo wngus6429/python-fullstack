@@ -1,6 +1,6 @@
 from db_model.mongodb import conn_mongodb
 from datetime import datetime
-
+#! 여기는 몽고DB연결 예정
 
 class BlogSession():
     blog_page = {'A': 'blog_A.html', 'B': 'blog_B.html'}
