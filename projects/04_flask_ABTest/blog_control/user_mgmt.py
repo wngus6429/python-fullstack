@@ -26,7 +26,7 @@ class User(UserMixin):
 
         user = User(user_id=user[0], user_email=user[1], blog_id=user[2])
         db_cursor.close()
-        return user
+        return user # DB에서 사용자 정보를 가져와서 객체로 만든것
 
     @staticmethod
     def find(user_email):

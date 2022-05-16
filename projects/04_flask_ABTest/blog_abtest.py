@@ -13,14 +13,14 @@ import datetime
 app = Flask(__name__, static_url_path='/static')
 # app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 CORS(app)
-app.secret_key = 'dave_server1'
+app.secret_key = 'dave_server1' # 이 키가 바뀌면 다시 홈페이지 들어갔을때 풀려잇음.
 
 app.register_blueprint(blog.blog_abtest, url_prefix='/blog')
 
 # User session management setup
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.session_protection = "strong"
+login_manager.session_protection = "strong" # 강도 세게
 
 
 @login_manager.user_loader

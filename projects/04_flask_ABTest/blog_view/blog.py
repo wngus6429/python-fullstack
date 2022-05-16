@@ -41,6 +41,7 @@ def logout():
 def blog():
     # user_email = request.args.get('user_email')
     # blog_id = request.args.get('blog_id')
+    #! 애가 로그인 됐는지 아닌지 판단
     if current_user.is_authenticated:
         webpage_name = BlogSession.get_blog_page(current_user.blog_id)
         BlogSession.save_session_info(
