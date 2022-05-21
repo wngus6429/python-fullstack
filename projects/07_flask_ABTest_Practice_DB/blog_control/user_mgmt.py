@@ -1,6 +1,7 @@
 from flask_login import UserMixin
 from db_model.mysql import conn_mysqldb
-#! 여기는 MySQL 접속 예정
+#* db_model폴더의 mysql 파일안에 conn_mysqldb 함수 사용
+#! 여기는 MySQL 접속 예정 # 사용자 관리
 
 class User(UserMixin):
 

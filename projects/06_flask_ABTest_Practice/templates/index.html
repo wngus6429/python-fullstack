@@ -10,7 +10,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/blog/" />
 
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <style>
       .bd-placeholder-img {
@@ -78,7 +78,7 @@
             <a class="link-secondary" href="#">Subscribe</a>
           </div>
           <div class="col-4 text-center">
-            <a class="blog-header-logo text-dark" href="#">박주현님</a>
+            <a class="blog-header-logo text-dark" href="#">박주현님 어서오세요</a>
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
             <a class="link-secondary" href="#" aria-label="Search">
@@ -108,28 +108,26 @@
 
     <main class="container">
       <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-        <div class="px-0">
-          <h1 class="display-4 fst-italic">
-            박주현님의<br />
-            공부 블로그
-          </h1>
-          <form>
-            <div class="form-row">
+        <h1 style="color: yellow" class="display-4 fst-italic">박주현님의 공부 블로그</h1>
+        <div>
+          <div style="display: inline-block; width: 50%">
+            <form>
+              <div style="font-size: 30px">이메일 주소</div>
+              <input
+                style="width: 100%; height: 40px"
+                type="email"
+                placeholder="Email"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
               <div>
-                <div>이메일 주소</div>
-                <input
-                  style="width: 50%; height: 40px"
-                  type="email"
-                  placeholder="Email"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-                <div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
+          <div style="display: inline-block">
+            <img src="../public/icon_13.png" alt="" height="200px" />
+          </div>
         </div>
       </div>
 
