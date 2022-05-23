@@ -6,7 +6,7 @@ from db_model.mysql import conn_mysqldb
 class User(UserMixin):
 
     def __init__(self, user_id, user_email, blog_id):
-        self.id = user_id
+        self.id = user_id # flask_login에서도 쓰기 떄문에 이름 바꾸면 에러
         self.user_email = user_email
         self.blog_id = blog_id
 
@@ -18,9 +18,10 @@ class User(UserMixin):
         mysql_db = conn_mysqldb()
         db_cursor = mysql_db.cursor()
         sql = "SELECT * FROM user_info WHERE USER_ID = '" + str(user_id) + "'"
-        # print (sql)
+        # print (sql) 위에 보면 "" ' 이런거 때문에 헷갈림 그래서 찍어보는거임
+        # 확인 해보고 코드에 작동시켜 보는게 좋지
         db_cursor.execute(sql)
-        user = db_cursor.fetchone()
+        user = db_cursor.fetchone() # 매칭되는 코드 하나만 하면 되니까
         if not user:
             return None
         
@@ -45,8 +46,8 @@ class User(UserMixin):
 
     @staticmethod
     def create(user_email, blog_id):
-        user = User.find(user_email)
-        if user == None:
+        user = User.find(user_email) # 위에 find메소드
+        if user == None: # 위에 41번
             mysql_db = conn_mysqldb()
             db_cursor = mysql_db.cursor()
             sql = "INSERT INTO user_info (USER_EMAIL, BLOG_ID) VALUES ('%s', '%s')" % (str(user_email), str(blog_id))

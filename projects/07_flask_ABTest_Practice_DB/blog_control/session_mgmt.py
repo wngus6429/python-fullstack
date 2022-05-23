@@ -7,10 +7,11 @@ class BlogSession():
     session_count = 0
 
     @staticmethod
+    # 접속 정보를 DB에 보관
     def save_session_info(session_ip, user_email, webpage_name):
         now = datetime.now()
         now_time = now.strftime("%d/%m/%Y %H:%M:%S")  # https://strftime.org/
-
+        # strftime이 문자열로 바꾼다는거
         mongo_db = conn_mongodb()
         mongo_db.insert_one({
             'session_ip': session_ip,
@@ -22,6 +23,7 @@ class BlogSession():
     @staticmethod
     def get_blog_page(blog_id=None):
         if blog_id == None:
+            # 위 아래 한번씩 실행이 되도록
             if BlogSession.session_count == 0:
                 BlogSession.session_count = 1
                 return 'blog_A.html'
