@@ -57,6 +57,8 @@
 
           </p>
           <p class="lead mb-2">
+            <!-- 밑에 if문임. ㅋㅋ 612번이 true면 63번 보이고 아니면 -->
+            <!-- 밑에꺼 다 보인다. endif 주의해야함. 진자 2 템플릿 밑에 null로 해야함 -->
             {% if user_email != null %}
             {{ user_email }} 이메일 주소로 구독중입니다.
             {% else %}
