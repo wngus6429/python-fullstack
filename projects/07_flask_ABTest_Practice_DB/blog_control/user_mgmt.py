@@ -56,3 +56,13 @@ class User(UserMixin):
             return User.find(user_email)
         else:
             return user
+    
+    @staticmethod
+    def delete(user_id):
+        mysql_db = conn_mysqldb()
+        db_cursor = mysql_db.cursor()
+        sql = "DELETE FROM user_info WHERE USER_ID = %d" % (user_id)
+        deleted = db_cursor.execute(sql)
+        mysql_db.commit()
+        return deleted #이거 딱히 안 적어도 ㅋㅋ, 0을 돌려주면 없다는거지
+        # 혹시나 조건식으로 뭔가 할때를 대비해서 return을 한것이다.

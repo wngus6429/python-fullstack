@@ -1,4 +1,7 @@
 from flask import Flask, Blueprint, request, render_template, make_response, jsonify, redirect, url_for
+from flask_login import current_user, login_user, logout_user
+from blog_control.user_mgmt import User
+import datetime
 
 blog_abtest = Blueprint('blog', __name__)
 
@@ -14,13 +17,26 @@ def set_email():
         # content type 이 application/json 인 경우
         # print('set_email', request.get_json())
         print('set_email', request.form['user_email'])
-
+        user = User.create(request.form['user_email'], 'A') 
+        # session_mgmt.py 6번줄에 A
+        # https://docs.python.org/3/library/datetime.html#timedelta-objects
+        login_user(user, remember=True, duration=datetime.timedelta(days=365))
+        
         return redirect(url_for('blog.test_blog'))
 
     # return redirect('/blog/test_blog')
     # return make_response(jsonify(success=True), 200)
 
+@blog_abtest.route('/logout')
+def logout():
+    User.delete(current_user.id)
+    logout_user()
+    return redirect(url_for('blog.test_blog'))
 
 @blog_abtest.route('/test_blog')
 def test_blog():
-    return render_template('blog_A.html')
+    if current_user.is_authenticated:
+        return render_template('blog_A.html', user_email=current_user.user_email)
+    else:
+        # 한번도 등록된적이 없는 사용자
+        return render_template('blog_A.html') # blog_A파일의 65번쨰부터 실행
