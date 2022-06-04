@@ -5,7 +5,7 @@
 body {
   margin: 0 auto;
   color: #3f464d;
-  font-family: "Spoqa Han Sans Neo", "Sans-serif";
+  font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
 }
 
 /* a 링크 태그 스타일 초기화 */
@@ -89,7 +89,7 @@ section {
 
 .main {
   height: 360px; /* 화면 이미지 고정 */
-  background-image: url("https://www.fun-coding.org/assets_lms/images/photodune-4161018-group-of-students-m.jpg");
+  background-image: url('https://www.fun-coding.org/assets_lms/images/photodune-4161018-group-of-students-m.jpg');
   background-size: cover;
   background-position: center 10%; /* 이미지 위치를 살짝 위로 올리기 위한 position 설정 */
   background-repeat: no-repeat;
@@ -254,7 +254,6 @@ section {
   /* border-radius: 블럭 모서리를 둥글게 하는 CSS 기능
      top-left | top-right | bottom-right | bottom-left */
   border-radius: 8px 8px 0 0;
-  height: 150px;
 }
 
 .class-container {
@@ -307,6 +306,30 @@ section {
 
 li a:hover {
   cursor: pointer;
+}
+
+footer {
+  border-top: 1px solid gray;
+  background-color: greenyellow;
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.footer-message {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.footer-content {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-copyright {
+  color: orangered;
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
 }
 
 @media only screen and (min-width: 1200px) {
