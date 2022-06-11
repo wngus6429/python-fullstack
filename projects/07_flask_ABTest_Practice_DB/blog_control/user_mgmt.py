@@ -65,4 +65,4 @@ class User(UserMixin):
         deleted = db_cursor.execute(sql)
         mysql_db.commit()
         return deleted #이거 딱히 안 적어도 ㅋㅋ, 0을 돌려주면 없다는거지
-        # 혹시나 조건식으로 뭔가 할때를 대비해서 return을 한것이다.
+        # 혹시나 조건식으로 뭔가 할때를 대비해서 return을 한것이다.0
