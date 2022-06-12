@@ -2,13 +2,11 @@
   box-sizing: border-box;
   /* 박스 사이즈는 border까지 포함이다. */
 }
-
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 0 auto;
   color: #3f464d;
 }
-
 .inner {
   width: 100%;
   height: 100%;
@@ -16,7 +14,6 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
 }
-
 header {
   width: 100%;
   height: 80px;
@@ -26,7 +23,6 @@ header {
   left: 0;
   z-index: 1000;
 }
-
 .head-container {
   width: 100%;
   height: 100%;
@@ -35,27 +31,23 @@ header {
   align-items: center;
   background-color: #f9f6f6;
 }
-
 .head-container .head-brand {
   font-weight: bold;
   font-size: 1.2rem;
 }
-
 img {
   width: 100%;
   height: 100%;
+  position: relative;
 }
-
 .head-container .head-blog {
   font-weight: bold;
   font-size: 1.2rem;
 }
-
 a {
   /* A태그 속성 리셋 */
   all: unset;
 }
-
 a:link {
   text-decoration: none;
   color: #3f464d;
@@ -64,19 +56,16 @@ a:hover {
   cursor: pointer;
   color: gold;
 }
-
 section {
   width: 100%;
   background-color: #fff;
   position: relative;
 }
-
 .main {
   height: 100%;
   z-index: 1;
   background-size: cover;
 }
-
 .main-container {
   width: 100%;
   height: 100%;
@@ -84,31 +73,86 @@ section {
   z-index: 2;
   margin-top: 60px;
 }
-
 .header-image {
   opacity: 0.5;
 }
-
 .title-container {
   font-size: 1.5rem;
   padding-top: 10px;
   padding-bottom: 10px;
-  transform: translate(10%, -200%);
+  position: absolute;
+  top: 20%;
+  left: 20%;
 }
-
 .title {
   color: blue;
   margin-bottom: 0.7rem;
 }
-
 .message {
   color: red;
   font-weight: 800;
   line-height: 2rem;
 }
-
+.skill-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.skill {
+  width: 25%;
+  background-color: #fff;
+  align-items: center;
+  border-radius: 9px;
+  display: flex;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
+}
+.skill-icon {
+  font-size: 2.5rem;
+  margin: 0 10px;
+}
+.skill-title {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.skill-name {
+  font-weight: bold;
+  color: #545e6f;
+  margin-bottom: 0.2rem;
+}
+.skill-usage {
+  font-size: 0.9rem;
+  color: #545e6f;
+}
+.python-style {
+  color: #2186c4;
+}
+.vue-style {
+  color: green;
+}
+.aws-style {
+  color: gold;
+}
 @media only screen and (min-width: 1200px) {
   .inner {
     max-width: 1500px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .main-container {
+    display: none;
+  }
+  .skill-container {
+    margin-top: 15%;
+    flex-wrap: wrap;
+    /* display: none; */
+  }
+  .skill {
+    width: 50%;
   }
 }
