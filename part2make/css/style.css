@@ -12,7 +12,7 @@ body {
   height: 100%;
   /* 가운데 설정임 */
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 header {
   width: 100%;
@@ -99,6 +99,7 @@ section {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 1rem 0;
 }
 .skill {
   width: 25%;
@@ -109,6 +110,12 @@ section {
   padding: 0.5rem 1rem;
   margin: 0 0.5rem;
   box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
+  /* 아이콘 움직임 */
+  transition: 0.4s;
+}
+/* 아이콘 움직임 */
+.skill:hover {
+  transform: translate(0, -5px);
 }
 .skill-icon {
   font-size: 2.5rem;
@@ -138,10 +145,10 @@ section {
 .aws-style {
   color: gold;
 }
-
 .roadmap-container {
   width: 100%;
   margin-top: 2rem;
+  overflow: hidden;
 }
 .roadmap-title-container {
   width: 100%;
@@ -167,12 +174,21 @@ section {
 .class-list {
   display: flex;
   list-style: none;
+  /* 위에 스타일 none 해도 기존 li 속성은 남아 있어서 */
+  padding: 1rem 0;
+  margin: 0;
 }
 .class-card {
   width: 240px;
   box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
   border-radius: 8px;
   margin: 0 10px;
+  transition: 0.4s;
+  flex-shrink: 0;
+}
+.class-card:hover {
+  box-shadow: 10px 10px 0px -5px rgba(25, 42, 70, 0.2);
+  transform: translate(0, -5px);
 }
 .class-image {
   width: 100%;
@@ -198,6 +214,45 @@ section {
   background-color: #0d47a1;
   padding: 0.2rem;
 }
+.class-desc {
+  width: 100%;
+  margin-top: 0.8rem;
+}
+.class-title {
+  font-weight: bold;
+  color: #545e6f;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.5rem;
+}
+.class-detail {
+  font-size: 0.9rem;
+  color: #545e6f;
+  line-height: 1rem;
+}
+.roadmap-desc {
+  display: visual;
+}
+footer {
+  border-top: 1px solid #e4e4e4;
+  background-color: #e4e4e4;
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+.footer-message {
+  font-weight: bold;
+  color: #545e6f;
+  margin-bottom: 0.4rem;
+}
+.footer-contact {
+  color: #545e6f;
+  margin: 0.5rem 0.5rem;
+}
+.footer-copyright {
+  color: #545e6f;
+}
 @media only screen and (min-width: 1200px) {
   .inner {
     max-width: 1500px;
@@ -214,5 +269,8 @@ section {
   }
   .skill {
     width: 50%;
+  }
+  .roadmap-desc {
+    display: none;
   }
 }
