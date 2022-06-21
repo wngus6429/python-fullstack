@@ -161,15 +161,23 @@ section {
   font-weight: bold;
   color: #545e6f;
 }
-.arrow-prev {
+.slide-prev {
   font-size: 2rem;
   cursor: pointer;
   color: blue;
 }
-.arrow-next {
+.slide-next {
   font-size: 2rem;
   cursor: pointer;
   color: blue;
+}
+.slide-prev-hover:hover {
+  transition: transform 0.5s;
+  transform: translateX(-2px);
+}
+.slide-next-hover:hover {
+  transition: transform 0.5s;
+  transform: translateX(2px);
 }
 .class-list {
   display: flex;
@@ -177,6 +185,8 @@ section {
   /* 위에 스타일 none 해도 기존 li 속성은 남아 있어서 */
   padding: 1rem 0;
   margin: 0;
+  /* hidden으로 설정하면, trasform시 이미지 짤림 */
+  overflow: none;
 }
 .class-card {
   width: 240px;
